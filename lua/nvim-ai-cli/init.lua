@@ -54,7 +54,14 @@ function M.open()
 
   local job_id = vim.fn.termopen(cmd, {
     on_exit = function()
-      M.bufnr = nil
+      if not config.values.auto_close then
+        M.bufnr = nil
+        return
+      end
+      vim.schedule(function()
+        close_window()
+        M.bufnr = nil
+      end)
     end,
   })
 

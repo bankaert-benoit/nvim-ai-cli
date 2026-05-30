@@ -4,6 +4,7 @@ local defaults = {
   cmd = nil,
   width = 40,
   side = "right",
+  auto_close = true,
 }
 
 M.values = {}
