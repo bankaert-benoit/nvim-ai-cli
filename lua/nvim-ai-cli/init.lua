@@ -25,9 +25,12 @@ local function close_window()
   if not M.bufnr then
     return
   end
-  local winid = vim.fn.bufwinnr(M.bufnr)
-  if winid > 0 then
-    vim.api.nvim_win_close(winid, true)
+  local wins = vim.api.nvim_list_wins()
+  for _, win in ipairs(wins) do
+    if vim.api.nvim_win_get_buf(win) == M.bufnr then
+      pcall(vim.api.nvim_win_close, win, true)
+      break
+    end
   end
 end
 
