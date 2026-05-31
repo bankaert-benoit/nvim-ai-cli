@@ -9,7 +9,7 @@ in a vertical split terminal buffer, fully driven by user config.
 
 ```lua
 {
-  "benoit/nvim-ai-cli",
+  "bankaert-benoit/nvim-ai-cli",
   config = function()
     require("nvim-ai-cli").setup({
       cmd = "gemini",
@@ -22,7 +22,7 @@ in a vertical split terminal buffer, fully driven by user config.
 
 ```lua
 use({
-  "benoit/nvim-ai-cli",
+  "bankaert-benoit/nvim-ai-cli",
   config = function()
     require("nvim-ai-cli").setup({
       cmd = "gemini",
@@ -34,7 +34,7 @@ use({
 ### vim-plug
 
 ```vim
-Plug 'benoit/nvim-ai-cli'
+Plug 'bankaert-benoit/nvim-ai-cli'
 
 lua << EOF
 require("nvim-ai-cli").setup({
@@ -57,8 +57,9 @@ The configured CLI tool starts automatically inside the terminal buffer.
 | Option  | Type               | Default   | Description                     |
 |---------|--------------------|-----------|---------------------------------|
 | `cmd`   | `string` or `list` | **required** | The CLI command to run        |
-| `width` | `number`           | `40`      | Width of the split (percent)    |
-| `side`  | `"left"` / `"right"` | `"right"` | Which side to open the split  |
+| `width`      | `number`           | `40`      | Width of the split (percent)    |
+| `side`       | `"left"` / `"right"` | `"right"` | Which side to open the split  |
+| `auto_close` | `boolean`          | `true`    | Close the split when terminal exits |
 
 ## Example
 
