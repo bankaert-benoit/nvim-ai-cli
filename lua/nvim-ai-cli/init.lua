@@ -6,6 +6,13 @@ M.bufnr = nil
 
 function M.setup(opts)
   config.merge(opts)
+
+	local key = config.values.keymap
+	if key and key ~= "" then
+		vim.keymap.set("n", key, function()
+			M.toggle()
+		end, { desc = "Toggle AI CLI panel", silent = true })
+	end
 end
 
 local function window_side()
@@ -47,6 +54,12 @@ function M.open()
   vim.cmd(window_side())
   vim.cmd("vertical resize " .. width)
 
+  if M.bufnr and vim.api.nvim_buf_is_valid(M.bufnr) then
+    vim.api.nvim_win_set_buf(0, M.bufnr)
+    vim.cmd("startinsert")
+    return
+  end
+
   local bufnr = vim.api.nvim_create_buf(false, true)
   vim.api.nvim_win_set_buf(0, bufnr)
 
@@ -84,7 +97,6 @@ end
 
 function M.close()
   close_window()
-  M.bufnr = nil
 end
 
 function M.toggle()
@@ -96,3 +108,5 @@ function M.toggle()
 end
 
 return M
+
+

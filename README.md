@@ -46,7 +46,8 @@ EOF
 ## Usage
 
 ```
-:AiCli      Open / close the AI terminal panel
+:AiCli          Open / close the AI terminal panel
+<leader>ai      Toggle the panel (default keymap)
 ```
 
 The panel opens as a vertical split on the right side (configurable).
@@ -60,6 +61,7 @@ The configured CLI tool starts automatically inside the terminal buffer.
 | `width`      | `number`           | `40`      | Width of the split (percent)    |
 | `side`       | `"left"` / `"right"` | `"right"` | Which side to open the split  |
 | `auto_close` | `boolean`          | `true`    | Close the split when terminal exits |
+| `keymap`     | `string` or `boolean` | `"<leader>ai"` | Toggle shortcut keymap. Set to `false` or `""` to disable. |
 
 ## Example
 

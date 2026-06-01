@@ -5,6 +5,7 @@ local defaults = {
   width = 40,
   side = "right",
   auto_close = true,
+  keymap = "<leader>ai",
 }
 
 M.values = {}

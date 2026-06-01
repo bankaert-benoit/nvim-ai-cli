@@ -36,11 +36,11 @@ can be wired up through a simple configuration table.
 > Goal: make the panel feel polished and non-intrusive.
 
 - [x] Toggle: if the panel is already open, close it; otherwise open it
-- [ ] Remember the terminal job across toggles (don't restart the CLI on every open)
+- [x] Remember the terminal job across toggles (don't restart the CLI on every open)
 - [x] Config option: `auto_close` — close the split when the terminal job exits
 - [ ] Config option: `env` — extra environment variables forwarded to the CLI process
 - [ ] Config option: `on_open` / `on_close` callbacks (Lua functions)
-- [ ] Keymaps: optional default keymap (e.g. `<leader>ai`) configurable via `keymap` option
+- [x] Keymaps: optional default keymap (e.g. `<leader>ai`) configurable via `keymap` option
 - [x] Proper buffer options: `bufhidden=hide`, `nobuflisted`, etc.
 - [ ] Graceful error handling when `cmd` is not found in `$PATH`
 
